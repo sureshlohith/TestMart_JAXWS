@@ -11,7 +11,7 @@ import javax.jws.soap.SOAPBinding.Style;
 
 import org.suresh.jaxws.model.Product;
 
-@WebService(name = "testmartcatalog", portName = "testmartcatalogport", targetNamespace = "http://www.suresh.java.io", serviceName = "TestMartCatalogService")
+@WebService(name = "testmartcatalog", targetNamespace = "http://www.suresh.java.io")
 @SOAPBinding(style = Style.DOCUMENT)
 
 public interface ProductCatalogPort {
@@ -29,7 +29,7 @@ public interface ProductCatalogPort {
 			@WebParam(partName = "itemInput") String item);
 
 	@WebMethod(action = "fetch_productsv2", operationName = "fetchProductsv2", exclude = false)
-	@WebResult(partName = "categorieOutput")
+	@WebResult(partName = "categorieOutput",name="Product")
 	List<Product> getProductsv2(@WebParam(partName = "categorieInput") String categorie);
 
 }

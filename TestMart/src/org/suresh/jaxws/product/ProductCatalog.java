@@ -19,7 +19,7 @@ import org.suresh.jaxws.product.business.ProductServiceImpl;
  * @author Administrator
  *
  */
-@WebService(endpointInterface="org.suresh.jaxws.product.ProductCatalogPort")
+@WebService(endpointInterface="org.suresh.jaxws.product.ProductCatalogPort",portName = "testmartcatalogport",serviceName = "TestMartCatalogService")
 public class ProductCatalog implements ProductCatalogPort {
 
 	ProductServiceImpl pimpl = new ProductServiceImpl();

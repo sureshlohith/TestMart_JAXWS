@@ -3,10 +3,16 @@
  */
 package org.suresh.jaxws.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
 /**
  * @author Administrator
  *
  */
+@XmlRootElement(name="Product")
+@XmlType(propOrder= {"price","sku","name"})
 public class Product {
 	private String name;
 	private double sku;
@@ -24,8 +30,15 @@ public class Product {
 	}
 
 	/**
+	 * 
+	 */
+	public Product() {
+	}
+
+	/**
 	 * @return the name
 	 */
+	@XmlElement(name="Product Name")
 	public String getName() {
 		return name;
 	}
@@ -41,10 +54,10 @@ public class Product {
 	/**
 	 * @return the sku
 	 */
+	@XmlElement(name="Product Sku")
 	public double getSku() {
 		return sku;
 	}
-
 	/**
 	 * @param sku
 	 *            the sku to set
@@ -56,6 +69,7 @@ public class Product {
 	/**
 	 * @return the price
 	 */
+	@XmlElement(name="Product Price")
 	public double getPrice() {
 		return price;
 	}
